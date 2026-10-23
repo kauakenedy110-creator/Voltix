@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voltix — Energia que vira conhecimento</title>
+<style>
+:root{--navy:#061b3d;--blue:#0c3f91;--bright:#1674ed;--pale:#edf5ff;--ink:#122444;--muted:#61718b;--line:#dbe6f5;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:#f3f7fc;color:var(--ink);font:15px/1.45 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}.app{max-width:1120px;margin:auto;min-height:100vh;background:#f8fbff}
+header{background:linear-gradient(125deg,#041735,#0c3f91);color:white;padding:20px 22px 26px;border-radius:0 0 28px 28px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.back-btn{border:1px solid #ffffff66;background:#ffffff12;color:#fff;border-radius:12px;padding:9px 12px;font-weight:750;white-space:nowrap}.brand{font-size:25px;font-weight:850;letter-spacing:-.8px}.brand span{color:#8ec5ff}.pill{font-size:12px;border:1px solid #ffffff55;padding:6px 10px;border-radius:20px;color:#dceaff}
+h1{font-size:27px;line-height:1.15;margin:25px 0 8px;max-width:540px}header p{color:#d6e5ff;margin:0;max-width:620px}
+main{padding:18px}.tabs{display:flex;gap:8px;overflow:auto;padding:4px 0 14px}.tab{border:1px solid var(--line);background:white;color:var(--muted);border-radius:13px;padding:10px 14px;white-space:nowrap;font-weight:700}.tab.active{background:var(--navy);color:white;border-color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 5px 20px #183b6610;min-width:0}.wide{grid-column:1/-1}.eyebrow{font-size:12px;color:var(--bright);font-weight:800;text-transform:uppercase;letter-spacing:.08em}.card h2{font-size:19px;margin:6px 0 12px}.card p{color:var(--muted);margin:7px 0}.field{display:block;font-size:13px;font-weight:750;margin:12px 0 5px}.input{width:100%;border:1px solid #cbd9ec;border-radius:11px;padding:12px;background:#fbfdff;color:var(--ink);outline-color:var(--bright)}.btn{border:0;border-radius:12px;background:var(--blue);color:white;padding:12px 15px;font-weight:800;margin-top:13px;width:100%}.btn.secondary{background:var(--pale);color:var(--blue);border:1px solid #d2e5ff}.result{background:#edf5ff;border-radius:14px;padding:14px;margin-top:14px}.result strong{font-size:24px;display:block;color:var(--navy)}.formula{font-family:ui-monospace,SFMono-Regular,monospace;background:#f2f6fc;padding:10px;border-radius:10px;color:#123f83;display:block;margin-top:8px;overflow-wrap:anywhere}.choice{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);padding:11px;border-radius:12px;margin:8px 0}.choice input{margin-top:4px}.feedback{padding:12px;border-radius:12px;margin-top:10px;background:#edf5ff}.good{color:#137548}.bad{color:#b42318}.small{font-size:12px;color:var(--muted)}.feature{display:flex;gap:12px;align-items:center}.icon{width:42px;height:42px;display:grid;place-items:center;background:#e6f1ff;border-radius:13px;font-size:21px}.listitem{padding:12px 0;border-bottom:1px solid var(--line)}.listitem:last-child{border:0}footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
+@media(max-width:620px){.grid{grid-template-columns:1fr}.wide{grid-column:auto}header{padding:18px 18px 24px}h1{font-size:25px}main{padding:13px}.card{padding:16px}.top{align-items:flex-start}}
+</style>
+</head>
+<body><div class="app">
+<header><div class="top"><button id="backButton" class="back-btn" type="button" aria-label="Voltar" title="Voltar">← Voltar</button><div class="brand">ϟ Voltix<span>.</span></div><div class="pill">PROTÓTIPO INTERATIVO</div></div><h1>Energia que vira conhecimento.</h1><p>Calcule o consumo, entenda as fórmulas e aprenda eletricidade na prática.</p></header>
+<main>
+<nav class="tabs" aria-label="Navegação">
+<button class="tab active" data-page="inicio">⌂ Início</button><button class="tab" data-page="calculadora">ϟ Calculadora</button><button class="tab" data-page="questoes">☷ Questões</button><button class="tab" data-page="formulas">∑ Fórmulas</button><button class="tab" data-page="aluno">🎓 Área do aluno</button><button class="tab" data-page="professor">▣ Área do professor</button>
+</nav>
+<section id="inicio" class="page">
+<div class="grid">
+<div class="card wide"><div class="eyebrow">Seu painel de aprendizagem</div><h2>Olá! Vamos aprender hoje?</h2><p>Use as ferramentas para transformar conceitos de eletricidade em resultados práticos.</p></div>
+<div class="card"><div class="feature"><div class="icon">ϟ</div><div><strong>Consumo mensal</strong><p class="small">Estime kWh e custo de energia.</p></div></div><button class="btn" data-go="calculadora">Calcular consumo</button></div>
+<div class="card"><div class="feature"><div class="icon">✓</div><div><strong>Teste seus conhecimentos</strong><p class="small">Questões com correção explicada.</p></div></div><button class="btn secondary" data-go="questoes">Praticar questões</button></div>
+<div class="card"><div class="feature"><div class="icon">∑</div><div><strong>Biblioteca de fórmulas</strong><p class="small">Veja variáveis e exemplos.</p></div></div><button class="btn secondary" data-go="formulas">Explorar fórmulas</button></div>
+<div class="card"><div class="feature"><div class="icon">🎓</div><div><strong>Para aprender e ensinar</strong><p class="small">Espaços separados por perfil.</p></div></div><button class="btn secondary" data-go="aluno">Entrar na área do aluno</button></div>
+<div class="card wide"><div class="eyebrow">Importante</div><p>Os resultados são estimativas educativas. Confira a tarifa da sua conta de luz e os dados dos equipamentos para obter valores mais próximos da realidade.</p></div>
+</div></section>
+<section id="calculadora" class="page" hidden><div class="grid">
+<div class="card"><div class="eyebrow">Conversor elétrico</div><h2>Volts, ampères e watts</h2><p>Para corrente contínua ou carga resistiva, use P = V × I.</p>
+<label class="field" for="volts">Tensão (V)</label><input class="input" id="volts" type="number" min="0" value="220">
+<label class="field" for="amps">Corrente (A)</label><input class="input" id="amps" type="number" min="0" value="5">
+<button class="btn" id="convert">Calcular potência</button><div class="result" id="powerResult"><span>Potência calculada</span><strong>1.100 W</strong><span class="formula">P = V × I</span></div></div>
+<div class="card"><div class="eyebrow">Consumo mensal</div><h2>Estime sua conta</h2>
+<label class="field" for="watts">Potência do aparelho (W)</label><input class="input" id="watts" type="number" min="0" value="1100">
+<label class="field" for="hours">Horas de uso por dia</label><input class="input" id="hours" type="number" min="0" max="24" step=".5" value="8">
+<label class="field" for="days">Dias de uso no mês</label><input class="input" id="days" type="number" min="1" max="31" value="30">
+<label class="field" for="tariff">Tarifa (R$/kWh)</label><input class="input" id="tariff" type="number" min="0" step=".01" value=".90">
+<button class="btn" id="energyCalc">Calcular consumo</button><div class="result" id="energyResult"><span>Consumo mensal</span><strong>264 kWh</strong><span>Custo estimado: R$ 237,60</span><span class="formula">E = (P ÷ 1.000) × horas/dia × dias</span></div></div>
+<div class="card wide"><div class="eyebrow">Como funciona</div><p><b>Potência:</b> multiplique a tensão pela corrente para obter watts, usando as condições adequadas do circuito.</p><p><b>Energia:</b> converta watts para quilowatts dividindo por 1.000 e multiplique pelo tempo de uso em horas.</p></div></div></section>
+<section id="questoes" class="page" hidden><div class="grid"><div class="card wide"><div class="eyebrow">Banco de questões</div><h2>Pratique e veja a resolução</h2><p>Escolha uma alternativa e toque em “Corrigir resposta”.</p><div id="quiz"></div><button class="btn" id="checkQuiz">Corrigir resposta</button><div id="quizFeedback" aria-live="polite"></div><button class="btn secondary" id="nextQuiz">Próxima questão</button></div></div></section>
+<section id="formulas" class="page" hidden><div class="grid">
+<div class="card"><div class="eyebrow">Lei de Ohm</div><h2>Tensão elétrica</h2><span class="formula">V = R × I</span><p>V = tensão (volts); R = resistência (ohms); I = corrente (ampères).</p><p><b>Exemplo:</b> 4 Ω × 2 A = 8 V.</p></div>
+<div class="card"><div class="eyebrow">Potência elétrica</div><h2>Potência</h2><span class="formula">P = V × I</span><p>P = potência (watts); V = tensão (volts); I = corrente (ampères).</p><p><b>Exemplo:</b> 220 V × 5 A = 1.100 W.</p></div>
+<div class="card"><div class="eyebrow">Energia elétrica</div><h2>Consumo</h2><span class="formula">E (kWh) = P (W) ÷ 1.000 × t (h)</span><p>Converta a potência em kW e multiplique pelo tempo em horas.</p><p><b>Exemplo:</b> 1 kW × 4 h = 4 kWh.</p></div>
+<div class="card"><div class="eyebrow">Custo estimado</div><h2>Valor em reais</h2><span class="formula">Custo = consumo (kWh) × tarifa (R$/kWh)</span><p>O valor real pode incluir impostos, bandeiras tarifárias e cobranças adicionais.</p></div>
+</div></section>
+<section id="aluno" class="page" hidden><div class="grid">
+<div class="card wide"><div class="eyebrow">Espaço do aluno</div><h2>Seu aprendizado, passo a passo</h2><p>Este protótipo permite explorar as ferramentas e praticar sem criar uma conta.</p><label class="field" for="studentName">Seu nome (opcional)</label><input class="input" id="studentName" placeholder="Digite seu nome"><button class="btn" id="saveStudent">Personalizar saudação</button><div id="studentGreeting" class="feedback">Bem-vindo(a) ao Voltix!</div></div>
+<div class="card"><h2>Próximas atividades</h2><div class="listitem">1. Revisar potência elétrica</div><div class="listitem">2. Calcular consumo em kWh</div><div class="listitem">3. Resolver questões</div><button class="btn secondary" data-go="questoes">Começar atividades</button></div>
+<div class="card"><h2>Progresso</h2><p>Responda às questões para conferir suas respostas e ler as resoluções.</p><button class="btn secondary" data-go="formulas">Revisar fórmulas</button></div>
+</div></section>
+<section id="professor" class="page" hidden><div class="grid">
+<div class="card wide"><div class="eyebrow">Espaço do professor</div><h2>Prepare uma atividade</h2><p>Crie uma questão demonstrativa para copiar e compartilhar com a turma. O salvamento é local nesta demonstração.</p>
+<label class="field" for="teacherQuestion">Enunciado</label><input class="input" id="teacherQuestion" placeholder="Ex.: Qual é a potência de um aparelho?">
+<label class="field" for="teacherA">Alternativa A</label><input class="input" id="teacherA" placeholder="Resposta A">
+<label class="field" for="teacherB">Alternativa B</label><input class="input" id="teacherB" placeholder="Resposta B">
+<label class="field" for="teacherCorrect">Alternativa correta</label><select class="input" id="teacherCorrect"><option value="A">A</option><option value="B">B</option></select>
+<label class="field" for="teacherExplain">Explicação / fórmula</label><input class="input" id="teacherExplain" placeholder="Explique como chegar à resposta">
+<button class="btn" id="createQuestion">Montar questão</button><div id="teacherOutput" class="result" hidden></div><button class="btn secondary" id="copyQuestion" hidden>Copiar questão</button></div>
+<div class="card wide"><h2>Recursos do professor</h2><p>• Criar perguntas de múltipla escolha.</p><p>• Preparar explicações com fórmulas.</p><p>• Usar o banco de questões para revisar conteúdos.</p><p class="small">Login real, turmas compartilhadas e acompanhamento de notas exigem um servidor e banco de dados, ainda não incluídos neste protótipo.</p></div>
+</div></section>
+</main><footer>Voltix © 2026 · Protótipo educativo interativo · Azul-escuro + branco</footer></div>
+<script>
+const tabs=[...document.querySelectorAll('.tab')], pages=[...document.querySelectorAll('.page')];
+let currentPage='inicio'; const pageHistory=[]; function go(page){if(page!==currentPage)pageHistory.push(currentPage);currentPage=page;pages.forEach(p=>p.hidden=p.id!==page);tabs.forEach(t=>t.classList.toggle('active',t.dataset.page===page));window.scrollTo({top:0,behavior:'smooth'});document.getElementById('backButton').style.visibility=page==='inicio'?'hidden':'visible'}
+document.getElementById('backButton').addEventListener('click',()=>{const previous=pageHistory.pop()||'inicio';currentPage=previous;pages.forEach(p=>p.hidden=p.id!==previous);tabs.forEach(t=>t.classList.toggle('active',t.dataset.page===previous));document.getElementById('backButton').style.visibility=previous==='inicio'?'hidden':'visible';window.scrollTo({top:0,behavior:'smooth'})});document.getElementById('backButton').style.visibility='hidden';
+tabs.forEach(t=>t.addEventListener('click',()=>go(t.dataset.page)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+const num=id=>Math.max(0,Number(document.getElementById(id).value)||0);
+function br(n,d=2){return n.toLocaleString('pt-BR',{maximumFractionDigits:d})}
+document.getElementById('convert').onclick=()=>{let p=num('volts')*num('amps');document.getElementById('powerResult').innerHTML=`<span>Potência calculada</span><strong>${br(p)} W</strong><span class="formula">P = V × I = ${br(num('volts'))} × ${br(num('amps'))}</span>`};
+document.getElementById('energyCalc').onclick=()=>{let kwh=num('watts')/1000*num('hours')*num('days'),cost=kwh*num('tariff');document.getElementById('energyResult').innerHTML=`<span>Consumo mensal estimado</span><strong>${br(kwh)} kWh</strong><span>Custo estimado: R$ ${br(cost)}</span><span class="formula">E = (P ÷ 1.000) × h × dias</span>`};
+const questions=[
+{q:'Um aparelho de 800 W fica ligado por 5 horas. Qual energia consome?',a:['4 kWh','40 kWh','160 kWh','800 kWh'],correct:0,ex:'E = P × t. Convertendo: 800 W ÷ 1.000 = 0,8 kW. Então E = 0,8 × 5 = 4 kWh.'},
+{q:'Qual fórmula calcula a potência elétrica em um circuito simples?',a:['V = R × I','P = V × I','E = m × c','C = V ÷ t'],correct:1,ex:'P = V × I. Multiplique a tensão em volts pela corrente em ampères para obter potência em watts, nas condições adequadas.'},
+{q:'Uma resistência de 4 Ω recebe corrente de 2 A. Qual é a tensão?',a:['2 V','6 V','8 V','16 V'],correct:2,ex:'Pela Lei de Ohm, V = R × I. Logo, V = 4 × 2 = 8 V.'}
+];let qi=0;
+function renderQuiz(){let q=questions[qi];document.getElementById('quiz').innerHTML=`<p><b>Questão ${qi+1} de ${questions.length}</b></p><p>${q.q}</p>`+q.a.map((a,i)=>`<label class="choice"><input type="radio" name="answer" value="${i}"><span>${String.fromCharCode(65+i)}. ${a}</span></label>`).join('');document.getElementById('quizFeedback').innerHTML=''}
+document.getElementById('checkQuiz').onclick=()=>{let sel=document.querySelector('input[name="answer"]:checked');let out=document.getElementById('quizFeedback');if(!sel){out.innerHTML='<div class="feedback">Selecione uma alternativa antes de corrigir.</div>';return}let q=questions[qi],ok=Number(sel.value)===q.correct;out.innerHTML=`<div class="feedback ${ok?'good':'bad'}"><b>${ok?'Resposta correta!':'Ainda não. Vamos entender:'}</b><p>${q.ex}</p><p><b>Alternativa correta: ${String.fromCharCode(65+q.correct)}.</b> ${q.a[q.correct]}</p></div>`};
+document.getElementById('nextQuiz').onclick=()=>{qi=(qi+1)%questions.length;renderQuiz()};renderQuiz();
+document.getElementById('saveStudent').onclick=()=>{let name=document.getElementById('studentName').value.trim();document.getElementById('studentGreeting').textContent=name?`Olá, ${name}! Bons estudos com o Voltix.`:'Bem-vindo(a) ao Voltix! Digite seu nome para personalizar a saudação.'};
+let teacherText='';document.getElementById('createQuestion').onclick=()=>{let q=document.getElementById('teacherQuestion').value.trim(),a=document.getElementById('teacherA').value.trim(),b=document.getElementById('teacherB').value.trim(),c=document.getElementById('teacherCorrect').value,e=document.getElementById('teacherExplain').value.trim();if(!q||!a||!b||!e){alert('Preencha o enunciado, as duas alternativas e a explicação.');return}teacherText=`${q}\nA) ${a}\nB) ${b}\nCorreta: ${c}\nResolução: ${e}`;let o=document.getElementById('teacherOutput');o.hidden=false;o.textContent=teacherText;document.getElementById('copyQuestion').hidden=false};
+document.getElementById('copyQuestion').onclick=async()=>{try{await navigator.clipboard.writeText(teacherText);document.getElementById('copyQuestion').textContent='Copiado!'}catch(e){prompt('Copie sua questão:',teacherText)}};
+</script></body></html>
